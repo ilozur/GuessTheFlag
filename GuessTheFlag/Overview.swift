@@ -9,19 +9,53 @@ import SwiftUI
 
 struct Overview: View {
     var body: some View {
-        LinearGradient(gradient: Gradient(stops: [
-            .init(color: .white, location: 0.45),
-            .init(color: .black, location: 0.55)
-        ]), startPoint: .top, endPoint: .bottom)
-            .ignoresSafeArea()
-        
-        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 20, endRadius: 200)
-            .ignoresSafeArea()
-        
-        AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
-            .ignoresSafeArea()
+        VStack {
+            Section {
+                Button("Button #1") {}
+                    .buttonStyle(.bordered)
+                Button("Button #2", role: .destructive) {}
+                    .buttonStyle(.bordered)
+                Button("Button #3") {}
+                    .buttonStyle(.borderedProminent)
+                    .tint(.mint)
+                Button("Button #4", role: .destructive) {}
+                    .buttonStyle(.borderedProminent)
+            }
+            Section {
+                Button {
+                    print("Button was tapped")
+                } label: {
+                    Text("Tap me!")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(.red)
+                }
+            }
+            Section {
+                Image(systemName: "pencil")
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Image(systemName: "pencil")
+                }
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+                Button {
+                    print("Edit button was tapped")
+                } label: {
+                    Label("Edit", systemImage: "pencil")
+                }
+            }
+        }
     }
 }
+    func executeDelete() {
+        print("New deleting")
+    }
+    
 
 struct Overview_Previews: PreviewProvider {
     static var previews: some View {
