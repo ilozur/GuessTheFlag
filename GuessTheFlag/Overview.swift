@@ -10,6 +10,7 @@ import SwiftUI
 struct Overview: View {
     var body: some View {
         VStack {
+            Spacer()
             HStack {
                 Text("1")
                 Text("2")
@@ -25,6 +26,8 @@ struct Overview: View {
                 Text("8")
                 Text("9")
             }
+            Spacer()
+            Spacer()
         }
     }
 }
