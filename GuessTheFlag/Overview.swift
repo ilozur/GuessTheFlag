@@ -9,26 +9,17 @@ import SwiftUI
 
 struct Overview: View {
     var body: some View {
-        VStack {
-            Spacer()
-            HStack {
-                Text("1")
-                Text("2")
-                Text("3")
+        ZStack {
+            VStack(spacing: 0) {
+                Color.red
+                Color(red: 1, green: 0.8, blue: 0)
             }
-            HStack {
-                Text("4")
-                Text("5")
-                Text("6")
-            }
-            HStack {
-                Text("7")
-                Text("8")
-                Text("9")
-            }
-            Spacer()
-            Spacer()
+                Text("Your content")
+                .foregroundStyle(.secondary)
+                .padding(50)
+                .background(.ultraThinMaterial)
         }
+        .ignoresSafeArea()
     }
 }
 
