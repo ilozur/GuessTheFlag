@@ -9,19 +9,17 @@ import SwiftUI
 
 struct Overview: View {
     var body: some View {
-        ZStack {
-            VStack(spacing: 0) {
-                Color.red
-                Color.green
-                    .frame(minWidth: 200, maxWidth: .infinity, maxHeight: 50)
-                Color(red: 0, green: 0, blue: 1)
-            }
-            Text("Your content")
-                .foregroundStyle(.secondary)
-                .padding(50)
-                .background(.ultraThinMaterial)
-        }
-        .ignoresSafeArea()
+        LinearGradient(gradient: Gradient(stops: [
+            .init(color: .white, location: 0.45),
+            .init(color: .black, location: 0.55)
+        ]), startPoint: .top, endPoint: .bottom)
+            .ignoresSafeArea()
+        
+        RadialGradient(gradient: Gradient(colors: [.blue, .black]), center: .center, startRadius: 20, endRadius: 200)
+            .ignoresSafeArea()
+        
+        AngularGradient(gradient: Gradient(colors: [.red, .yellow, .green, .blue, .purple, .red]), center: .center)
+            .ignoresSafeArea()
     }
 }
 
