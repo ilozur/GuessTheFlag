@@ -12,9 +12,11 @@ struct Overview: View {
         ZStack {
             VStack(spacing: 0) {
                 Color.red
-                Color(red: 1, green: 0.8, blue: 0)
+                Color.green
+                    .frame(minWidth: 200, maxWidth: .infinity, maxHeight: 50)
+                Color(red: 0, green: 0, blue: 1)
             }
-                Text("Your content")
+            Text("Your content")
                 .foregroundStyle(.secondary)
                 .padding(50)
                 .background(.ultraThinMaterial)
